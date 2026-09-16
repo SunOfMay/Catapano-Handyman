@@ -75,19 +75,19 @@
       text-decoration: none;
     }
 
-    .desktop-navigation {
+    .navigation {
       display: flex;
       align-items: center;
       gap: 26px;
     }
 
-    .desktop-navigation a {
+    .navigation a {
       color: var(--navy);
       font-weight: 700;
       text-decoration: none;
     }
 
-    .desktop-navigation a:hover {
+    .navigation a:hover {
       color: var(--orange-dark);
     }
 
@@ -105,7 +105,8 @@
       color: var(--white);
       font-weight: 800;
       text-decoration: none;
-      transition: background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
 
     .button:hover {
@@ -120,7 +121,6 @@
     }
 
     .button-outline:hover {
-      border-color: var(--white);
       background: var(--white);
       color: var(--navy);
     }
@@ -192,10 +192,7 @@
       margin-bottom: 40px;
     }
 
-    .section-heading h2,
-    .about-copy h2,
-    .service-area h2,
-    .contact-introduction h2 {
+    h2 {
       margin: 0 0 15px;
       color: var(--navy);
       font-size: clamp(2rem, 5vw, 2.8rem);
@@ -333,10 +330,6 @@
       text-decoration: none;
     }
 
-    .contact-list a:hover {
-      color: #ffc986;
-    }
-
     /* Contact form */
 
     .contact-form {
@@ -387,7 +380,6 @@
 
     .contact-form .button {
       width: 100%;
-      cursor: pointer;
       font: inherit;
     }
 
@@ -408,4 +400,381 @@
       font-size: 0.9rem;
     }
 
-    
+    footer p {
+      margin: 0;
+    }
+
+    .mobile-call-button {
+      display: none;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 880px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1100px);
+      }
+
+      .navigation {
+        display: none;
+      }
+
+      .header-content {
+        min-height: 64px;
+      }
+
+      .site-header .small-button {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0 85px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+      .hero-contact {
+        display: grid;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .services-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 24px 20px;
+      }
+
+      .mobile-call-button {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1100;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 18px;
+        border-radius: 999px;
+        background: var(--orange);
+        color: var(--white);
+        box-shadow: 0 8px 25px rgba(15, 29, 39, 0.3);
+        font-weight: 800;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-content">
+
+      #top
+        Catapano Handyman
+      </a>
+
+      <nav class="navigation" aria-label="Main navigation">
+        #servicesServices</a>
+        #aboutAbout</a>
+        #service-areaService Area</a>
+        #contactContact</a>
+      </nav>
+
+      tel:+4591404469
+        Call Now
+      </a>
+
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <h1>Reliable handyman services for your home</h1>
+
+        <p class="hero-description">
+          Practical help with repairs, furniture assembly, mounting,
+          installations and home maintenance. Based in Copenhagen and
+          serving customers across Zealand.
+        </p>
+
+        <div class="hero-buttons">
+          #contact
+            Request a Free Quote
+          </a>
+
+          tel:+4591404469
+            Call +45 91 40 44 69
+          </a>
+        </div>
+
+        <div class="hero-contact">
+          tel:+4591404469
+            Phone: +45 91 40 44 69
+          </a>
+
+          <a href="mailto:contact@catapanohandyman.dk">
+            Email: contact@catapanohandyman.dk
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Handyman Services</h2>
+
+          <p>
+            Reliable and practical assistance with everyday repairs,
+            assembly, mounting and maintenance around your home.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <h3>Furniture Assembly</h3>
+            <p>
+              Assembly of wardrobes, beds, tables, desks, shelving and
+              other furniture.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Mounting</h3>
+            <p>
+              Mounting of shelves, televisions, mirrors, pictures and
+              curtain rails.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Home Repairs</h3>
+            <p>
+              Help with minor repairs, adjustments and general maintenance
+              around your home.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Painting and Touch-Ups</h3>
+            <p>
+              Minor painting work, finishing and touch-ups to refresh
+              your home.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Installations and Fittings</h3>
+            <p>
+              Installation of household fittings and other practical
+              items around the home.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Other Handyman Tasks</h3>
+            <p>
+              Have a different task in mind? Get in touch to discuss
+              what you need help with.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+
+        <div class="about-copy">
+          <h2>Practical Solutions for Your Home</h2>
+
+          <p>
+            Catapano Handyman helps homeowners, tenants and landlords with
+            repairs, assembly, mounting, maintenance and other practical tasks.
+          </p>
+
+          <p>
+            Every request starts with a conversation about the task, location
+            and expected scope. This ensures clear communication and a solution
+            suited to your needs.
+          </p>
+        </div>
+
+        <aside class="benefits">
+          <h3>Why Choose Catapano Handyman?</h3>
+
+          <ul>
+            <li>Reliable and professional service</li>
+            <li>Clear communication</li>
+            <li>Flexible scheduling</li>
+            <li>Attention to detail</li>
+            <li>Fair and transparent pricing</li>
+            <li>Small jobs are welcome</li>
+          </ul>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="service-area-section" id="service-area">
+      <div class="container service-area">
+
+        <h2>Based in Copenhagen. Serving Customers Across Zealand.</h2>
+
+        <p>
+          Contact Catapano Handyman to discuss your project, location and
+          requirements. Travel outside Copenhagen can be agreed depending
+          on the scope and location of the job.
+        </p>
+
+        #contact
+          Discuss Your Project
+        </a>
+
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-layout">
+
+        <div class="contact-introduction">
+          <h2>Request a Free Quote</h2>
+
+          <p>
+            Describe the task, where the work is located and when you would
+            like the work completed. Catapano Handyman will get back to you
+            to discuss the details.
+          </p>
+
+          <div class="contact-list">
+            tel:+4591404469
+              Phone: +45 91 40 44 69
+            </a>
+
+            <a href="mailto:contact@catapanohandyman.dk">
+              Email: contact@catapanohandyman.dk
+            </a>
+          </div>
+        </div>
+
+        <form
+          class="contact-form"
+          action="mailto:contact@catapanohandyman.dk"
+          method="post"
+          enctype="text/plain"
+        >
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="customer-name">Name</label>
+              <input
+                id="customer-name"
+                name="Name"
+                type="text"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="customer-phone">Phone Number</label>
+              <input
+                id="customer-phone"
+                name="Phone"
+                type="tel"
+                autocomplete="tel"
+              >
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="customer-email">Email Address</label>
+            <input
+              id="customer-email"
+              name="Email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="project-location">Location of the Work</label>
+            <input
+              id="project-location"
+              name="Location"
+              type="text"
+              placeholder="City or area"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="project-description">How Can We Help?</label>
+            <textarea
+              id="project-description"
+              name="Message"
+              placeholder="Please provide a short description of the task."
+              required
+            ></textarea>
+          </div>
+
+          <button class="button" type="submit">
+            Send Request
+          </button>
+
+          <p class="form-note">
+            Your information will only be used to respond to your request.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Catapano Handyman · CVR 46656458</p>
+    </div>
+  </footer>
+
+  tel:+4591404469
+    Call Now
+  </a>
+
+</body>
+</html>
