@@ -8,21 +8,21 @@
 
   <meta
     name="description"
-    content="Reliable handyman services for homeowners, tenants and landlords. Based in Copenhagen and serving customers across Zealand."
+    content="Reliable handyman services for homes across Zealand. Based in Copenhagen. Contact Catapano Handyman for repairs, furniture assembly, mounting and practical home improvements."
   >
 
   <style>
     :root {
-      --navy: #172b3a;
-      --dark-navy: #0f1d27;
-      --orange: #f28c28;
-      --orange-dark: #d97412;
-      --light-grey: #f5f7f8;
+      --navy: #163040;
+      --navy-dark: #0d202b;
+      --orange: #ef851d;
+      --orange-dark: #d76f0c;
+      --cream: #f8f6f2;
       --white: #ffffff;
-      --text: #26343d;
-      --muted: #66737c;
-      --border: #dde4e8;
-      --shadow: 0 10px 30px rgba(15, 29, 39, 0.08);
+      --text: #24343e;
+      --muted: #62727c;
+      --border: #dde3e6;
+      --shadow: 0 12px 32px rgba(13, 32, 43, 0.1);
     }
 
     * {
@@ -35,18 +35,14 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
       background: var(--white);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
-
     .container {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -56,33 +52,35 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.97);
       border-bottom: 1px solid var(--border);
     }
 
-    .header-content {
-      min-height: 72px;
+    .header-inner {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 30px;
     }
 
-    .business-name {
+    .brand {
       color: var(--navy);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 800;
+      letter-spacing: -0.3px;
       text-decoration: none;
     }
 
     .navigation {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 28px;
     }
 
     .navigation a {
       color: var(--navy);
+      font-size: 0.96rem;
       font-weight: 700;
       text-decoration: none;
     }
@@ -95,141 +93,206 @@
 
     .button {
       display: inline-flex;
+      min-height: 50px;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border: 2px solid var(--orange);
       border-radius: 7px;
       background: var(--orange);
       color: var(--white);
+      font-size: 1rem;
       font-weight: 800;
       text-decoration: none;
-      cursor: pointer;
-      transition: 0.2s ease;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
 
     .button:hover {
-      background: var(--orange-dark);
       border-color: var(--orange-dark);
+      background: var(--orange-dark);
     }
 
     .button-outline {
-      border-color: var(--white);
+      border-color: rgba(255, 255, 255, 0.7);
       background: transparent;
       color: var(--white);
     }
 
     .button-outline:hover {
+      border-color: var(--white);
       background: var(--white);
       color: var(--navy);
     }
 
-    .small-button {
+    .header-button {
       min-height: 42px;
-      padding: 9px 16px;
-      font-size: 0.95rem;
+      padding: 9px 17px;
+      font-size: 0.92rem;
     }
 
     /* Hero */
 
     .hero {
-      padding: 105px 0;
-      background: linear-gradient(135deg, var(--dark-navy), #29495c);
+      position: relative;
+      overflow: hidden;
+      padding: 115px 0;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(239, 133, 29, 0.18),
+          transparent 28%
+        ),
+        linear-gradient(135deg, var(--navy-dark), #264b60);
       color: var(--white);
     }
 
+    .hero::after {
+      position: absolute;
+      right: -130px;
+      bottom: -175px;
+      width: 430px;
+      height: 430px;
+      border: 70px solid rgba(255, 255, 255, 0.035);
+      border-radius: 50%;
+      content: "";
+    }
+
     .hero-content {
-      max-width: 790px;
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #ffc988;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 0 24px;
-      font-size: clamp(2.7rem, 7vw, 5rem);
-      line-height: 1.04;
-      letter-spacing: -2px;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 1.02;
+      letter-spacing: -2.5px;
     }
 
     .hero-description {
       max-width: 700px;
-      margin: 0 0 32px;
-      color: #e2e9ed;
+      margin: 0 0 34px;
+      color: #e2eaee;
       font-size: 1.18rem;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 30px;
+      gap: 13px;
+      margin-bottom: 32px;
     }
 
-    .hero-contact {
+    .hero-details {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 28px;
+      gap: 14px 30px;
+      color: #edf3f5;
     }
 
-    .hero-contact a {
-      color: var(--white);
+    .hero-details a {
+      color: inherit;
       font-weight: 700;
       text-decoration: none;
     }
 
-    .hero-contact a:hover {
-      color: #ffc986;
+    .hero-details a:hover {
+      color: #ffc988;
     }
 
     /* General sections */
 
     section {
-      padding: 80px 0;
+      padding: 90px 0;
     }
 
     .section-heading {
       max-width: 720px;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--orange-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
     h2 {
-      margin: 0 0 15px;
+      margin: 0 0 16px;
       color: var(--navy);
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      line-height: 1.15;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -1px;
     }
 
-    .section-heading p,
-    .about-copy p,
-    .service-area p {
+    .section-heading p {
+      margin: 0;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.07rem;
     }
 
     /* Services */
 
     .services-section {
-      background: var(--light-grey);
+      background: var(--cream);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
     .service-card {
-      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      min-height: 230px;
+      padding: 34px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--white);
       box-shadow: var(--shadow);
     }
 
+    .service-card::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--orange);
+      content: "";
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 25px;
+      color: var(--orange-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
     .service-card h3 {
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       color: var(--navy);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
     }
 
     .service-card p {
@@ -237,104 +300,149 @@
       color: var(--muted);
     }
 
-    /* About */
+    /* Benefits */
 
-    .about-grid {
+    .benefits-section {
+      background: var(--white);
+    }
+
+    .benefits-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
       align-items: center;
     }
 
-    .benefits {
-      padding: 32px;
-      border-radius: 12px;
+    .benefits-copy p {
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .benefits-panel {
+      padding: 38px;
+      border-radius: 14px;
       background: var(--navy);
       color: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .benefits h3 {
-      margin: 0 0 15px;
-      font-size: 1.4rem;
-    }
-
-    .benefits ul {
+    .benefits-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 24px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .benefits li {
-      padding: 11px 0;
+    .benefits-list li {
+      padding: 16px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      font-weight: 700;
     }
 
-    .benefits li:last-child {
-      border-bottom: 0;
-    }
-
-    .benefits li::before {
-      content: "✓";
+    .benefits-list li::before {
       margin-right: 10px;
-      color: #ffc986;
+      color: #ffc988;
       font-weight: 900;
+      content: "✓";
     }
 
     /* Service area */
 
-    .service-area-section {
-      background: var(--light-grey);
-      text-align: center;
+    .area-section {
+      padding: 65px 0;
+      background: var(--orange);
+      color: var(--white);
     }
 
-    .service-area {
-      max-width: 770px;
-      margin: 0 auto;
+    .area-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 45px;
     }
 
-    .service-area p {
-      margin-bottom: 27px;
+    .area-content h2 {
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .area-content p {
+      max-width: 700px;
+      margin: 0;
+      color: #fff7ef;
+    }
+
+    .area-content .button {
+      flex-shrink: 0;
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .area-content .button:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
     }
 
     /* Contact */
 
     .contact-section {
-      background: var(--navy);
+      background: var(--navy-dark);
       color: var(--white);
     }
 
     .contact-layout {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
-      gap: 60px;
+      gap: 65px;
       align-items: start;
     }
 
-    .contact-introduction h2 {
+    .contact-copy h2 {
       color: var(--white);
     }
 
-    .contact-introduction p {
-      color: #dce5ea;
+    .contact-copy p {
+      color: #d9e3e8;
+      font-size: 1.05rem;
     }
 
-    .contact-list {
+    .contact-information {
       display: grid;
-      gap: 10px;
-      margin-top: 28px;
+      gap: 13px;
+      margin-top: 30px;
     }
 
-    .contact-list a {
+    .contact-information span {
+      display: block;
+      margin-bottom: 3px;
+      color: #aebdc5;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .contact-information a {
       color: var(--white);
-      font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 800;
       text-decoration: none;
     }
 
-    /* Contact form */
+    .contact-information a:hover {
+      color: #ffc988;
+    }
+
+    /* Form */
 
     .contact-form {
-      padding: 32px;
-      border-radius: 12px;
+      padding: 36px;
+      border-radius: 14px;
       background: var(--white);
       box-shadow: var(--shadow);
     }
@@ -353,7 +461,8 @@
       display: block;
       margin-bottom: 7px;
       color: var(--navy);
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
     }
 
     .form-group input,
@@ -370,15 +479,15 @@
     .form-group input:focus,
     .form-group textarea:focus {
       border-color: var(--orange);
-      outline: 3px solid rgba(242, 140, 40, 0.18);
+      outline: 3px solid rgba(239, 133, 29, 0.17);
     }
 
     .form-group textarea {
-      min-height: 145px;
+      min-height: 150px;
       resize: vertical;
     }
 
-    .contact-form .button {
+    .submit-button {
       width: 100%;
       font: inherit;
     }
@@ -386,18 +495,18 @@
     .form-note {
       margin: 14px 0 0;
       color: var(--muted);
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       text-align: center;
     }
 
     /* Footer */
 
     footer {
-      padding: 25px 0;
-      background: var(--dark-navy);
-      color: #becad0;
+      padding: 27px 0;
+      background: #08151c;
+      color: #aebdc5;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     footer p {
@@ -408,64 +517,75 @@
       display: none;
     }
 
-    /* Mobile */
+    /* Responsive */
 
     @media (max-width: 880px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid,
+      .benefits-layout,
       .contact-layout {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 42px;
+      }
+
+      .area-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
       .container {
-        width: min(100% - 28px, 1100px);
+        width: min(100% - 28px, 1120px);
       }
 
       .navigation {
         display: none;
       }
 
-      .header-content {
-        min-height: 64px;
-      }
-
-      .site-header .small-button {
+      .header-button {
         display: none;
       }
 
+      .header-inner {
+        min-height: 64px;
+      }
+
       .hero {
-        padding: 75px 0 85px;
+        padding: 78px 0 88px;
       }
 
       .hero h1 {
-        letter-spacing: -1px;
+        letter-spacing: -1.5px;
       }
 
-      .hero-buttons .button {
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .button {
         width: 100%;
       }
 
-      .hero-contact {
+      .hero-details {
         display: grid;
       }
 
       section {
-        padding: 65px 0;
+        padding: 68px 0;
       }
 
       .services-grid,
+      .benefits-list,
       .form-row {
         grid-template-columns: 1fr;
       }
 
+      .service-card {
+        min-height: 0;
+      }
+
       .contact-form {
-        padding: 24px 20px;
+        padding: 25px 20px;
       }
 
       .mobile-call-button {
@@ -476,11 +596,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 13px 18px;
+        padding: 13px 19px;
         border-radius: 999px;
         background: var(--orange);
         color: var(--white);
-        box-shadow: 0 8px 25px rgba(15, 29, 39, 0.3);
+        box-shadow: 0 8px 25px rgba(8, 21, 28, 0.35);
         font-weight: 800;
         text-decoration: none;
       }
@@ -491,16 +611,15 @@
 <body>
 
   <header class="site-header">
-    <div class="container header-content">
+    <div class="container header-inner">
 
-      #top
+      #home
         Catapano Handyman
       </a>
 
       <nav class="navigation" aria-label="Main navigation">
         #servicesServices</a>
-        #aboutAbout</a>
-        #service-areaService Area</a>
+        #benefitsWhy Choose Us</a>
         #contactContact</a>
       </nav>
 
@@ -511,20 +630,26 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
 
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero-content">
 
-        <h1>Reliable handyman services for your home</h1>
+        <span class="hero-label">
+          Based in Copenhagen
+        </span>
+
+        <h1>
+          Reliable handyman services across Zealand
+        </h1>
 
         <p class="hero-description">
-          Practical help with repairs, furniture assembly, mounting,
-          installations and home maintenance. Based in Copenhagen and
-          serving customers across Zealand.
+          Practical help with furniture assembly, repairs, mounting,
+          installations and home improvements. Clear communication,
+          reliable service and careful workmanship.
         </p>
 
-        <div class="hero-buttons">
+        <div class="hero-actions">
           #contact
             Request a Free Quote
           </a>
@@ -534,7 +659,7 @@
           </a>
         </div>
 
-        <div class="hero-contact">
+        <div class="hero-details">
           tel:+4591404469
             Phone: +45 91 40 44 69
           </a>
@@ -551,61 +676,61 @@
       <div class="container">
 
         <div class="section-heading">
-          <h2>Handyman Services</h2>
+          <span class="section-label">Services</span>
+
+          <h2>
+            Practical help for your home
+          </h2>
 
           <p>
-            Reliable and practical assistance with everyday repairs,
-            assembly, mounting and maintenance around your home.
+            From furniture assembly to everyday repairs, Catapano Handyman
+            provides flexible assistance with a wide range of household tasks.
           </p>
         </div>
 
         <div class="services-grid">
 
           <article class="service-card">
+            <span class="service-number">01</span>
+
             <h3>Furniture Assembly</h3>
+
             <p>
-              Assembly of wardrobes, beds, tables, desks, shelving and
-              other furniture.
+              Assembly of wardrobes, beds, tables, desks, storage systems,
+              shelving and other furniture.
             </p>
           </article>
 
           <article class="service-card">
-            <h3>Mounting</h3>
-            <p>
-              Mounting of shelves, televisions, mirrors, pictures and
-              curtain rails.
-            </p>
-          </article>
+            <span class="service-number">02</span>
 
-          <article class="service-card">
-            <h3>Home Repairs</h3>
+            <h3>Repairs and Maintenance</h3>
+
             <p>
-              Help with minor repairs, adjustments and general maintenance
+              Minor repairs, adjustments and practical maintenance tasks
               around your home.
             </p>
           </article>
 
           <article class="service-card">
-            <h3>Painting and Touch-Ups</h3>
+            <span class="service-number">03</span>
+
+            <h3>Mounting and Installation</h3>
+
             <p>
-              Minor painting work, finishing and touch-ups to refresh
-              your home.
+              Mounting of televisions, shelves, mirrors, pictures, curtain
+              rails and household fittings.
             </p>
           </article>
 
           <article class="service-card">
-            <h3>Installations and Fittings</h3>
-            <p>
-              Installation of household fittings and other practical
-              items around the home.
-            </p>
-          </article>
+            <span class="service-number">04</span>
 
-          <article class="service-card">
-            <h3>Other Handyman Tasks</h3>
+            <h3>General Handyman Services</h3>
+
             <p>
-              Have a different task in mind? Get in touch to discuss
-              what you need help with.
+              Have another task in mind? Get in touch to discuss the job,
+              location and practical requirements.
             </p>
           </article>
 
@@ -613,50 +738,55 @@
       </div>
     </section>
 
-    <section id="about">
-      <div class="container about-grid">
+    <section class="benefits-section" id="benefits">
+      <div class="container benefits-layout">
 
-        <div class="about-copy">
-          <h2>Practical Solutions for Your Home</h2>
+        <div class="benefits-copy">
+          <span class="section-label">Why Choose Us</span>
+
+          <h2>
+            Straightforward service from start to finish
+          </h2>
 
           <p>
-            Catapano Handyman helps homeowners, tenants and landlords with
-            repairs, assembly, mounting, maintenance and other practical tasks.
+            Every request begins with a clear conversation about the task,
+            location and expected scope. This helps ensure that expectations
+            are aligned before the work begins.
           </p>
 
           <p>
-            Every request starts with a conversation about the task, location
-            and expected scope. This ensures clear communication and a solution
-            suited to your needs.
+            Catapano Handyman assists homeowners, tenants and landlords with
+            both planned improvements and everyday practical tasks.
           </p>
         </div>
 
-        <aside class="benefits">
-          <h3>Why Choose Catapano Handyman?</h3>
-
-          <ul>
-            <li>Reliable and professional service</li>
+        <div class="benefits-panel">
+          <ul class="benefits-list">
+            <li>Reliable service</li>
             <li>Clear communication</li>
             <li>Flexible scheduling</li>
             <li>Attention to detail</li>
-            <li>Fair and transparent pricing</li>
-            <li>Small jobs are welcome</li>
+            <li>Transparent pricing</li>
+            <li>Small jobs welcome</li>
           </ul>
-        </aside>
+        </div>
 
       </div>
     </section>
 
-    <section class="service-area-section" id="service-area">
-      <div class="container service-area">
+    <section class="area-section">
+      <div class="container area-content">
 
-        <h2>Based in Copenhagen. Serving Customers Across Zealand.</h2>
+        <div>
+          <h2>
+            Based in Copenhagen. Serving customers across Zealand.
+          </h2>
 
-        <p>
-          Contact Catapano Handyman to discuss your project, location and
-          requirements. Travel outside Copenhagen can be agreed depending
-          on the scope and location of the job.
-        </p>
+          <p>
+            Contact Catapano Handyman to discuss your project and location.
+            Travel arrangements depend on the scope and location of the job.
+          </p>
+        </div>
 
         #contact
           Discuss Your Project
@@ -668,23 +798,37 @@
     <section class="contact-section" id="contact">
       <div class="container contact-layout">
 
-        <div class="contact-introduction">
-          <h2>Request a Free Quote</h2>
+        <div class="contact-copy">
+          <span class="section-label">Contact</span>
+
+          <h2>
+            Request a free quote
+          </h2>
 
           <p>
-            Describe the task, where the work is located and when you would
-            like the work completed. Catapano Handyman will get back to you
-            to discuss the details.
+            Send a short description of the task, the location and your
+            preferred timing. Catapano Handyman will contact you to discuss
+            the details.
           </p>
 
-          <div class="contact-list">
-            tel:+4591404469
-              Phone: +45 91 40 44 69
-            </a>
+          <div class="contact-information">
 
-            <a href="mailto:contact@catapanohandyman.dk">
-              Email: contact@catapanohandyman.dk
-            </a>
+            <div>
+              <span>Phone</span>
+
+              tel:+4591404469
+                +45 91 40 44 69
+              </a>
+            </div>
+
+            <div>
+              <span>Email</span>
+
+              <a href="mailto:contact@catapanohandyman.dk">
+                contact@catapanohandyman.dk
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -698,9 +842,10 @@
           <div class="form-row">
 
             <div class="form-group">
-              <label for="customer-name">Name</label>
+              <label for="name">Name</label>
+
               <input
-                id="customer-name"
+                id="name"
                 name="Name"
                 type="text"
                 autocomplete="name"
@@ -709,9 +854,10 @@
             </div>
 
             <div class="form-group">
-              <label for="customer-phone">Phone Number</label>
+              <label for="phone">Phone Number</label>
+
               <input
-                id="customer-phone"
+                id="phone"
                 name="Phone"
                 type="tel"
                 autocomplete="tel"
@@ -721,9 +867,10 @@
           </div>
 
           <div class="form-group">
-            <label for="customer-email">Email Address</label>
+            <label for="email">Email Address</label>
+
             <input
-              id="customer-email"
+              id="email"
               name="Email"
               type="email"
               autocomplete="email"
@@ -732,9 +879,10 @@
           </div>
 
           <div class="form-group">
-            <label for="project-location">Location of the Work</label>
+            <label for="location">Location of the Work</label>
+
             <input
-              id="project-location"
+              id="location"
               name="Location"
               type="text"
               placeholder="City or area"
@@ -742,16 +890,17 @@
           </div>
 
           <div class="form-group">
-            <label for="project-description">How Can We Help?</label>
+            <label for="message">How Can We Help?</label>
+
             <textarea
-              id="project-description"
+              id="message"
               name="Message"
               placeholder="Please provide a short description of the task."
               required
             ></textarea>
           </div>
 
-          <button class="button" type="submit">
+          <button class="button submit-button" type="submit">
             Send Request
           </button>
 
